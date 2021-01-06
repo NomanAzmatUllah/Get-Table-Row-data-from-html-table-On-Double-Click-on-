@@ -1,0 +1,26 @@
+        $(function () {
+                $('#LoadDataGrid').on('click', 'tr', function () {
+                    var table = document.getElementById('<%--<%=LoadDataGrid.ClientID%>--%>')
+                    var cells = table.getElementsByTagName('tr');
+                    currentRow = $(this).closest("tr");
+                    $(currentRow).css("background-color", "#A6ECF1");
+                    col1 = currentRow.find("td:eq(0)").text(); // get current row 1st TD value
+                    col2 = currentRow.find("td:eq(1)").text(); // get current row 2nd TD
+                    col3 = currentRow.find("td:eq(2)").text(); // get current row 3rd TD
+                    //var data = col1 + "\n" + col2 + "\n" + col3;
+                    //alert(data); //backtogrid            
+                });
+            });
+
+ $('#Cutomertable').on('dblclick', 'tr', function (e) {
+                var rowIndex = $(this).index();
+                $(rowIndex).css("background-color", "#A6ECF1");
+                 campNumber = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(0)`).html().replace("&nbsp;","");
+                 customerName = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(1)`).html().replace("&nbsp;","")
+                 serviceListItem = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(2)`).html().replace("&nbsp;","");
+                 serviceDetailItem = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(3)`).html().replace("&nbsp;","");
+                 loginDate = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(4)`).html().replace("&nbsp;","");
+                 closeDate = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(5)`).html().replace("&nbsp;","");
+                 accNumber = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(6)`).html().replace("&nbsp;","");
+                 contact = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(7)`).html().replace("&nbsp;","");
+                 description = $(`#Cutomertable tbody tr:eq(${rowIndex}) td:eq(8)`).html().replace("&nbsp;","");
